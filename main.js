@@ -42,8 +42,11 @@ liverail.call = function () {
 	for ( var i = 0 ; i < arguments.length ; i++ ) {
 		argArray.push(arguments[i]);
 	}
-	var callback = argArray.pop();
-	if ( token === undefined ) return callback('Login token not set')
+	if ( typeof argArray[argArray.length - 1] === 'function' ) var callback = argArray.pop();
+	if ( token === undefined ) {
+		if ( typeof callback === 'function' ) return callback('Login token not set')
+		return null
+	}
 	var route = argArray.shift();
 	if ( typeof argArray[0] !== 'undefined' ) var input = argArray[0];
 	if ( typeof input === 'undefined' )	input = {};
