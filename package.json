@@ -2,7 +2,7 @@
   "author": "David Banham <david@pinion.gg> (http://pinion.gg)",
   "name": "liverail-api",
   "description": "A nodejs client library for the Liverail platform's API",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/PinionTech/liverail-api.git"
