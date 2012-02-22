@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "git@oscar.pinion.gg:liverail-api"
+    "url": "git://github.com/PinionTech/liverail-api.git"
   },
   "engines": {
     "node": "~v0.6.x"
