@@ -30,7 +30,8 @@ liverail.login = function (user, pass, callback) {
 		parser.parseString(body, function (err, result) {
 			token = result.auth.token;
 			if (typeof callback !== "undefined") {
-				callback(result);
+				if (result.status !== 'success') return callback(result['_ERRORS_'], result)
+				return callback(false, result);
 			}
 		});
 	})
