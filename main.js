@@ -2,7 +2,6 @@ var request = require('request')
 	, crypto = require('crypto')
 	, qs = require('querystring')
 	, xml2js = require('xml2js')
-	, parser = new xml2js.Parser()
 	, endPoint = 'http://api4.int.liverail.com'
 	, liverail = exports
 	, token = undefined
@@ -17,6 +16,7 @@ function setEndPoint(env) {
 }
 
 liverail.login = function (user, pass, callback) {
+	var parser = new xml2js.Parser();
 	var passHash = crypto.createHash('md5').update(pass).digest('hex');
 	request({
 		method: 'POST',
@@ -38,6 +38,7 @@ liverail.login = function (user, pass, callback) {
 };
 
 liverail.call = function () {
+	var parser = new xml2js.Parser();
 	var argArray = [];
 	for ( var i = 0 ; i < arguments.length ; i++ ) {
 		argArray.push(arguments[i]);
