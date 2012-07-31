@@ -71,5 +71,3 @@ liverail.call = function () {
 };
 
 setEndPoint(process.env.NODE_ENV);
-
-console.log("endPoint", endPoint);
