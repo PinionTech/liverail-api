@@ -8,7 +8,7 @@ var request = require('request')
 	;
 
 function setEndPoint(env) {
-	if ( env === 'prod' ) {
+	if ( env === 'production' ) {
 		endPoint = 'http://api4.liverail.com'
 	} else {
 		endPoint = 'http://api4.int.liverail.com'
@@ -69,3 +69,7 @@ liverail.call = function () {
 		}
 	});
 };
+
+setEndPoint(process.env.NODE_ENV);
+
+console.log("endPoint", endPoint);
