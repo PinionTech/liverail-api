@@ -15,6 +15,8 @@ function setEndPoint(env) {
 	}
 }
 
+liverail.setEndPoint = setEndPoint;
+
 liverail.login = function (user, pass, callback) {
 	var parser = new xml2js.Parser();
 	var passHash = crypto.createHash('md5').update(pass).digest('hex');
