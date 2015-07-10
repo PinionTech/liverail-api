@@ -2,16 +2,16 @@ var request = require('request')
 	, crypto = require('crypto')
 	, qs = require('querystring')
 	, xml2js = require('xml2js')
-	, endPoint = 'http://api4.int.liverail.com'
+	, endPoint = 'https://api4.int.liverail.com'
 	, liverail = exports
 	, token = undefined
 	;
 
 function setEndPoint(env) {
 	if ( env === 'production' ) {
-		endPoint = 'http://api4.liverail.com'
+		endPoint = 'https://api4.liverail.com'
 	} else {
-		endPoint = 'http://api4.int.liverail.com'
+		endPoint = 'https://api4.int.liverail.com'
 	}
 }
 
