@@ -7,15 +7,12 @@ var request = require('request')
 	, token = undefined
 	;
 
-function setEndPoint(env) {
-	if ( env === 'production' ) {
-		endPoint = 'https://api4.liverail.com'
-	} else {
-		endPoint = 'https://api4.int.liverail.com'
-	}
+function setEndPoint(endPoint) {
+	endPoint = endPoint;
 }
 
 liverail.setEndPoint = setEndPoint;
+liverail.isLoggedIn = token === undefined ? false : true;
 
 liverail.login = function (user, pass, callback) {
 	var parser = new xml2js.Parser();
@@ -72,4 +69,8 @@ liverail.call = function () {
 	});
 };
 
-setEndPoint(process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'production') {
+	setEndPoint('https://api4.liverail.com');
+} else {
+	setEndPoint('https://api4.int.liverail.com');
+}
