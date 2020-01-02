@@ -11,7 +11,7 @@
     "node": "*"
   },
   "dependencies": {
-    "request": "2.9.x",
+    "request": "2.88.x",
     "xml2js": "0.1.x"
   },
   "devDependencies": {},
